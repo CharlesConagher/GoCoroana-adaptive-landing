@@ -1,0 +1,511 @@
+/*Nullification--------------------------------------*/
+
+::before,::after
+  padding: 0
+  margin: 0
+  border: 0
+  box-sizing: border-box
+
+a
+  text-decoration: none
+
+ul,ol,li
+  list-style: none
+  padding: 0
+
+img
+  vertical-align: top
+
+h1,h2,h3,h4,h5,h6
+  font-weight: inherit
+  font-size: inherit
+  margin: 0
+  color: #000000
+
+html,body
+  height: 100%
+  line-height: 1
+
+/*Body---------------------------------------------*/
+body
+  font-family: Rubik, sans-serif
+  font-size: 12px
+  color: #616161
+  margin: 0
+  .wrapper
+    overflow: hidden
+    display: flex
+    flex-direction: column
+    min-height: 100%
+.main
+  flex: 1 1 auto
+
+//Breakpoints
+$PC: 1086.98px
+$Tablet: 991.98px
+$MobileBig: 769px
+$MobileSmall: 479.98px
+
+//Main Colors
+$ColorRed: #EC5863
+$ColorBlue: #4285F4
+
+[class*='__container']
+  max-width: 1087px
+  margin: 0 auto
+  padding: 0 15px
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  align-items: center
+  position: relative
+  @media (max-width: $PC)
+    max-width: 970px
+  @media (max-width: $Tablet)
+    max-width: 750px
+  @media (max-width: $MobileBig)
+    max-width: none
+  @media (max-width: $MobileSmall)
+    max-width: none
+
+/*Header---------------------------------------------*/
+.header
+  position: absolute
+  width: 100%
+  top: 0
+  left: 0
+  z-index: 50
+  .header__container
+    display: flex
+    min-height: 114px
+    align-items: center
+    @media (max-width: $MobileSmall)
+      flex-direction: column
+    .header__logo
+      @media (max-width: $Tablet)
+        margin: 0 30px 0 0
+      @media (max-width: $MobileSmall)
+        margin: 20px 0 0 0
+    .header__menu
+      flex: 1 1 auto
+      @media (max-width: $MobileBig)
+        flex: 0 0 auto
+        padding: 0 20px 0 0
+        @media (max-width: $MobileSmall)
+          padding: 20px 0 20px 0
+    .header__download
+      flex: 0 0 252px
+      display: flex
+      justify-content: flex-end
+      margin-right: 20px
+      @media (max-width: $Tablet)
+        flex: 0 0 130px
+      @media (max-width: $MobileSmall)
+        flex: 0 0 0
+        margin: 0
+
+.menu
+  display: flex
+  justify-content: flex-end
+  padding: 0 40px 0 0
+  .menu__list
+    display: flex
+    @media (max-width: $MobileSmall)
+      padding: 0
+    .menu__item
+      margin: 0 40px 0 0
+      @media (max-width: $MobileBig)
+        margin: 0 20px 0 0
+      @media (max-width: $MobileSmall)
+        margin: 0 10px 0 10px
+      .menu__link
+        font-family: Raleway, sans-serif
+        font-size: 10px
+        font-style: normal
+        font-weight: 700
+        line-height: 1.2
+        letter-spacing: 0.14em
+        text-align: left
+        color: #000000
+        transition: font-size 0.5s
+        @media (max-width: $MobileBig)
+          font-size: 12px
+        &:hover
+          font-size: 15px
+
+/*Main page--------------------------------------------------------*/
+.main-page
+  background-color: #FAFBFD
+
+/*Get Started Section-----------------------------------------------*/
+.get-started
+  background-color: #f1f1f1
+.get-started__container
+  padding: 150px 15px 50px 15px
+  @media (max-width: $Tablet)
+    padding: 100px 15px 25px 15px
+  @media (max-width: $MobileSmall)
+    padding: 250px 0 50px 0
+  &:before
+    content: ""
+    position: absolute
+    width: 100vw
+    height: 100%
+    right: 350px
+    top: 0
+    background-color: $ColorRed
+    border-radius: 30px 0 0 30px
+    transform: translate(100%, 0px)
+    @media (max-width: $Tablet)
+      display: none
+  .get-started__content
+    display: flex
+    flex: 1 1 48%
+    flex-direction: row
+    padding: 0 0 0 20px
+    @media (max-width: $MobileBig)
+      flex-direction: column
+      align-items: center
+      padding: 0
+    @media (max-width: $MobileSmall)
+      max-width: 425px
+    .get-started__bloc-text
+      max-width: 375px
+    .get-started__img
+      flex: 0 1 52%
+      position: relative
+      z-index: 10
+      @media (max-width: $MobileBig)
+        transform: scale(0.8)
+      @media (max-width: $MobileSmall)
+        transform: scale(0.6)
+  .get-started__video
+    flex: 1 1 100%
+    padding: 60px 0 0 20px
+    @media (max-width: $Tablet)
+      padding: 25px 0 0 20px
+    @media (max-width: $MobileBig)
+      display: flex
+      justify-content: center
+    .video-get-started
+      display: inline-flex
+      align-items: center
+      .video-get-started__icon
+        padding: 0 10px 0 0
+        transition: 0.3s
+        &:hover
+          transform: scale(1.1)
+      .video-get-started__content
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        transition: 0.3s
+        &:hover
+          transform: scale(1.05)
+        .video-get-started__title
+          margin: 5px 0
+          color: #B0B0B0
+          font-family: Rubik, sans-serif
+          font-size: 13px
+          line-height: 16px
+          letter-spacing: 0.08em
+        .video-get-started__link
+          margin: 5px 0
+          color: #000000
+          font-family: Rubik, sans-serif
+          font-size: 11px
+          font-weight: 400
+          line-height: 11px
+          letter-spacing: 0.165em
+
+/*Stay safe section---------------------------------------------------*/
+.stay-safe__container
+  padding: 150px 15px 50px 15px
+  @media (max-width: $MobileSmall)
+    padding: 250px 0 50px 0
+  @media (max-width: $MobileBig)
+    flex-direction: column-reverse
+    padding: 25px 15px 50px 15px
+  .stay-safe__app-bloc
+    flex: 1 0 50%
+    position: relative
+    @media (max-width: $MobileBig)
+      flex: 0 1 50%
+    @media (max-width: $MobileSmall)
+      transform: scale(0.8)
+  .stay-safe__app-bloc-container
+    max-width: 338px
+    max-height: 554px
+    position: relative
+    margin: 0 0 0 44px
+    .stay-safe__img
+      display: inline-block
+      filter: drop-shadow(2px 4px 32px rgba(0, 0, 0, 0.12))
+      z-index: 10
+      position: relative
+      margin: 77px 138px 79px 44px
+    .stay-safe__decor-item
+      position: absolute
+      background-color: $ColorRed
+      border-radius: 30px
+    .stay-safe__decor-item1
+      top: 20px
+      left: -20px
+      width: 147px
+      height: 147px
+    .stay-safe__decor-item2
+      width: 77px
+      height: 77px
+      bottom: 0
+      left: 0
+    .stay-safe__decor-item3
+      width: 77px
+      height: 77px
+      bottom: 107px
+      right: 30px
+  .stay-safe__content
+    flex: 0 1 50%
+    @media (max-width: $MobileBig)
+      flex: 1 0 50%
+      margin: 0 0 20px 0
+    .stay-safe__bloc-text
+      max-width: 375px
+
+/*Experts section-----------------------------------------------------*/
+.experts
+  background-color: #f1f1f1
+.experts__container
+  .experts__info
+    flex: 1 0 100%
+    display: flex
+    justify-content: center
+    .experts__info-container
+      position: relative
+      .experts__info-bloc
+        z-index: 10
+        display: flex
+        flex-direction: row
+        align-items: center
+        justify-content: center
+        background-color: #ffffff
+        border-radius: 16px
+        filter: drop-shadow(2px 4px 32px rgba(0, 0, 0, 0.12))
+        margin: 100px 0 0 0
+        @media (max-width: $MobileSmall)
+          margin: 50px 0 0 0
+        .experts__info-list
+          z-index: 10
+          display: flex
+          flex-direction: row
+          margin: 28px 80px
+          justify-content: center
+          align-items: center
+          @media (max-width: $Tablet)
+            margin: 28px 40px
+          @media (max-width: $MobileSmall)
+            margin: 28px 20px
+          .experts__info-item
+            text-align: center
+            align-items: center
+            margin: 0 40px
+            @media (max-width: $MobileBig)
+              margin: 0 20px
+            @media (max-width: $MobileSmall)
+              margin: 0 10px
+            .experts__info-item__num
+              font-family: Rubik, sans-serif
+              font-size: 36px
+              font-weight: bold
+              line-height: 43px
+              letter-spacing: 0.14em
+              color: $ColorRed
+              margin: 0 0 5px 0
+              @media (max-width: $MobileSmall)
+                font-size: 25px
+            .experts__info-item__desc
+              font-family: Rubik, sans-serif
+              font-size: 11px
+              font-weight: bold
+              line-height: 13px
+              letter-spacing: 0.37em
+              text-transform: uppercase
+              margin: 0
+              @media (max-width: $MobileSmall)
+                font-size: 10px
+  .experts__bloc-text
+    flex: 1 0 50%
+    max-width: 375px
+    @media (max-width: $MobileBig)
+      margin: 40px 0 0 0
+  .experts__video
+    display: flex
+    flex: 1 0 50%
+    padding: 80px 0 117px 0
+    align-items: center
+    justify-content: center
+    @media (max-width: $MobileBig)
+      padding: 50px 0 50px 0
+    @media (max-width: $MobileSmall)
+      transform: scale(0.8)
+    .experts__video iframe
+      position: absolute
+      width: 100%
+      height: 100%
+      top: 0
+      left: 0
+      object-fit: cover
+      border-radius: 8px
+      box-shadow: 0 4px 18px rgba(88, 126, 236, 0.18)
+
+
+.experts__info-bloc-decor
+  position: absolute
+  background-color: $ColorRed
+  border-radius: 16px
+  @media (max-width: $MobileSmall)
+    display: none
+.experts__info-bloc-decor1
+  width: 65px
+  height: 65px
+  top: 170px
+  left: -20px
+  transform: rotate(-30deg)
+.experts__info-bloc-decor2
+  width: 96px
+  height: 96px
+  border-radius: 30px
+  transform: rotate(105deg)
+  top: 60px
+  left: 270px
+.experts__info-bloc-decor3
+  width: 127px
+  height: 127px
+  border-radius: 30px
+  transform: rotate(-30deg)
+  top: 100px
+  right: -50px
+
+/*Healthcare section--------------------------------------------------*/
+.healthcare__container
+  flex-direction: column
+  .healthcare__bloc-text
+    padding: 80px 0 0 0
+    @media (max-width: $Tablet)
+      max-width: 500px
+  .healthcare__content
+    margin: 45px 0 0 0
+    display: flex
+    @media (max-width: $Tablet)
+      margin: 0
+    .healthcare__list
+      display: flex
+      flex-direction: row
+      margin: 0
+      @media (max-width: $Tablet)
+        flex-direction: column
+      .healthcare__item
+        max-height: 278px
+        max-width: 278px
+        box-shadow: 0 4px 18px rgba(88, 126, 236, 0.18)
+        border-radius: 8px
+        margin: 0 35px
+        display: flex
+        flex-direction: column
+        align-items: center
+        text-align: center
+        @media (max-width: $PC)
+          margin: 0 20px
+        @media (max-width: $Tablet)
+          margin: 20px 0
+        .healthcare__item-icon
+          margin: 36px 105px 58px 105px
+        .healthcare__item-name
+          font-family: Rubik,sans-serif
+          font-size: 16px
+          font-weight: bold
+          letter-spacing: 0.08em
+        .healthcare__item-desc
+          font-family: Rubik,sans-serif
+          font-size: 12px
+          font-weight: normal
+          letter-spacing: 0.08em
+          line-height: 16px
+          color: #616161
+          margin: 25px
+          max-width: 278px
+
+
+/*Footer--------------------------------------------------------------*/
+.footer
+  display: flex
+  align-items: center
+  justify-content: center
+  background-color: #FAFBFD
+  .footer__container
+    margin: 75px 0 70px 0
+    .footer__item
+      margin: 0 30px
+      transition: 0.3s
+      &:hover
+        transform: scale(1.3)
+/*Bloc-text-----------------------------------------------------------*/
+.bloc-text
+  @media (max-width: $MobileBig)
+    display: flex
+    flex-direction: column
+    align-items: center
+    margin: 0 0 20px 0
+  @media (max-width: $MobileSmall)
+    margin: 0
+  .bloc-text__title
+    font-family: Rubik, sans-serif
+    font-size: 44px
+    font-weight: 700
+    line-height: 55px
+    letter-spacing: 0.005em
+    color: #000000
+    @media (max-width: $MobileBig)
+      text-align: center
+    @media (max-width: $MobileSmall)
+      font-size: 40px
+      margin: 0
+  .bloc-text__title-center
+    text-align: center
+  .bloc-text__desc
+    font-family: Rubik, sans-serif
+    font-size: 12px
+    line-height: 17px
+    letter-spacing: 0.08em
+    margin: 20px 0
+    @media (max-width: $MobileBig)
+      text-align: center
+  .bloc-text__desc-center
+    text-align: center
+    max-width: 600px
+
+.bloc-text__title_blue span
+  color: $ColorBlue
+.bloc-text__title_red span
+  color: $ColorRed
+
+/*Buttons------------------------------------------------------------*/
+.button
+  display: inline-block
+  padding: 14px 35px
+  border-radius: 5px
+  font-family: Raleway, sans-serif
+  font-size: 10px
+  text-transform: uppercase
+  font-weight: 800
+  line-height: 1.2
+  letter-spacing: 0.14em
+  background-color: $ColorRed
+  color: #FCFDFE
+  transition: background-color 0.5s ease 0s
+  &:hover
+    background-color: #cb2530
+.button__blue
+  background-color: $ColorBlue
+  &:hover
+    background-color: #0b52c0
+
