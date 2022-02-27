@@ -41,10 +41,12 @@ body
   flex: 1 1 auto
 
 //Breakpoints
-$PC: 1086.98px
-$Tablet: 991.98px
-$MobileBig: 769px
-$MobileSmall: 479.98px
+$PC: 1441px
+$Notebook: 1024px
+$Tablet: 768px
+$MobileBig: 425px
+$MobileMedium: 375px
+$MobileSmall: 320px
 
 //Main Colors
 $ColorRed: #EC5863
@@ -79,30 +81,36 @@ $ColorBlue: #4285F4
     display: flex
     min-height: 114px
     align-items: center
-    @media (max-width: $MobileSmall)
+    flex-wrap: wrap
+    @media (max-width: $Tablet)
       flex-direction: column
+      margin: 20px 0 0 0
+      @media (max-width: $MobileSmall)
+        margin: 0
     .header__logo
       @media (max-width: $Tablet)
-        margin: 0 30px 0 0
+        margin: 0
+        transform: scale(1.5)
       @media (max-width: $MobileSmall)
         margin: 20px 0 0 0
+        transform: scale(1.1)
     .header__menu
       flex: 1 1 auto
-      @media (max-width: $MobileBig)
+      @media (max-width: $Tablet)
         flex: 0 0 auto
-        padding: 0 20px 0 0
+        padding: 0
+        margin: 10px 0
         @media (max-width: $MobileSmall)
-          padding: 20px 0 20px 0
+          padding: 0
     .header__download
       flex: 0 0 252px
       display: flex
       justify-content: flex-end
-      margin-right: 20px
+      margin: 0 20px 0 0
       @media (max-width: $Tablet)
-        flex: 0 0 130px
-      @media (max-width: $MobileSmall)
-        flex: 0 0 0
+        flex: 0 0 40px
         margin: 0
+
 
 .menu
   display: flex
@@ -113,11 +121,11 @@ $ColorBlue: #4285F4
     @media (max-width: $MobileSmall)
       padding: 0
     .menu__item
-      margin: 0 40px 0 0
+      margin: 0 20px
       @media (max-width: $MobileBig)
-        margin: 0 20px 0 0
+        margin: 0 10px
       @media (max-width: $MobileSmall)
-        margin: 0 10px 0 10px
+        margin: 0 5px
       .menu__link
         font-family: Raleway, sans-serif
         font-size: 10px
@@ -128,10 +136,21 @@ $ColorBlue: #4285F4
         text-align: left
         color: #000000
         transition: font-size 0.5s
+        @media (max-width: $Tablet)
+          font-size: 15px
         @media (max-width: $MobileBig)
           font-size: 12px
+        @media (max-width: $MobileMedium)
+          font-size: 10px
         &:hover
           font-size: 15px
+          @media (max-width: $Tablet)
+            font-size: 20px
+          @media (max-width: $MobileBig)
+            font-size: 15px
+          @media (max-width: $MobileMedium)
+            font-size: 12px
+
 
 /*Main page--------------------------------------------------------*/
 .main-page
@@ -143,15 +162,13 @@ $ColorBlue: #4285F4
 .get-started__container
   padding: 150px 15px 50px 15px
   @media (max-width: $Tablet)
-    padding: 100px 15px 25px 15px
-  @media (max-width: $MobileSmall)
-    padding: 250px 0 50px 0
+    padding: 200px 15px 25px 15px
   &:before
     content: ""
     position: absolute
     width: 100vw
     height: 100%
-    right: 350px
+    right: 330px
     top: 0
     background-color: $ColorRed
     border-radius: 30px 0 0 30px
@@ -163,7 +180,7 @@ $ColorBlue: #4285F4
     flex: 1 1 48%
     flex-direction: row
     padding: 0 0 0 20px
-    @media (max-width: $MobileBig)
+    @media (max-width: $Tablet)
       flex-direction: column
       align-items: center
       padding: 0
@@ -175,18 +192,19 @@ $ColorBlue: #4285F4
       flex: 0 1 52%
       position: relative
       z-index: 10
-      @media (max-width: $MobileBig)
+      @media (max-width: $Tablet)
         transform: scale(0.8)
-      @media (max-width: $MobileSmall)
+      @media (max-width: $MobileBig)
         transform: scale(0.6)
+      @media (max-width: $MobileSmall)
+        transform: scale(0.4)
   .get-started__video
     flex: 1 1 100%
     padding: 60px 0 0 20px
     @media (max-width: $Tablet)
-      padding: 25px 0 0 20px
-    @media (max-width: $MobileBig)
       display: flex
       justify-content: center
+      padding: 25px 0 0 20px
     .video-get-started
       display: inline-flex
       align-items: center
@@ -223,31 +241,37 @@ $ColorBlue: #4285F4
   padding: 150px 15px 50px 15px
   @media (max-width: $MobileSmall)
     padding: 250px 0 50px 0
-  @media (max-width: $MobileBig)
+  @media (max-width: $Tablet)
     flex-direction: column-reverse
-    padding: 25px 15px 50px 15px
+    padding: 25px 0 50px 0
   .stay-safe__app-bloc
     flex: 1 0 50%
     position: relative
     @media (max-width: $MobileBig)
-      flex: 0 1 50%
-    @media (max-width: $MobileSmall)
+      margin: 20px 0 0 0
+    @media (max-width: $MobileMedium)
       transform: scale(0.8)
   .stay-safe__app-bloc-container
     max-width: 338px
     max-height: 554px
     position: relative
     margin: 0 0 0 44px
+    @media (max-width: $MobileBig)
+      margin: 0
     .stay-safe__img
       display: inline-block
       filter: drop-shadow(2px 4px 32px rgba(0, 0, 0, 0.12))
       z-index: 10
       position: relative
       margin: 77px 138px 79px 44px
+      @media (max-width: $MobileBig)
+        margin: 0
     .stay-safe__decor-item
       position: absolute
       background-color: $ColorRed
       border-radius: 30px
+      @media (max-width: $MobileBig)
+        display: none
     .stay-safe__decor-item1
       top: 20px
       left: -20px
@@ -279,6 +303,8 @@ $ColorBlue: #4285F4
     flex: 1 0 100%
     display: flex
     justify-content: center
+    @media (max-width: $Tablet)
+      transform: scale(0.8)
     .experts__info-container
       position: relative
       .experts__info-bloc
@@ -291,7 +317,7 @@ $ColorBlue: #4285F4
         border-radius: 16px
         filter: drop-shadow(2px 4px 32px rgba(0, 0, 0, 0.12))
         margin: 100px 0 0 0
-        @media (max-width: $MobileSmall)
+        @media (max-width: $MobileBig)
           margin: 50px 0 0 0
         .experts__info-list
           z-index: 10
@@ -302,16 +328,18 @@ $ColorBlue: #4285F4
           align-items: center
           @media (max-width: $Tablet)
             margin: 28px 40px
-          @media (max-width: $MobileSmall)
+          @media (max-width: $MobileBig)
             margin: 28px 20px
+          @media (max-width: $MobileMedium)
+            margin: 28px 10px
           .experts__info-item
             text-align: center
             align-items: center
             margin: 0 40px
             @media (max-width: $MobileBig)
-              margin: 0 20px
-            @media (max-width: $MobileSmall)
               margin: 0 10px
+            @media (max-width: $MobileSmall)
+              margin: 0 5px
             .experts__info-item__num
               font-family: Rubik, sans-serif
               font-size: 36px
@@ -320,8 +348,8 @@ $ColorBlue: #4285F4
               letter-spacing: 0.14em
               color: $ColorRed
               margin: 0 0 5px 0
-              @media (max-width: $MobileSmall)
-                font-size: 25px
+              @media (max-width: $MobileBig)
+                font-size: 30px
             .experts__info-item__desc
               font-family: Rubik, sans-serif
               font-size: 11px
@@ -330,12 +358,16 @@ $ColorBlue: #4285F4
               letter-spacing: 0.37em
               text-transform: uppercase
               margin: 0
+              @media (max-width: $MobileBig)
+                font-size: 15px
+              @media (max-width: $MobileMedium)
+                font-size: 13px
               @media (max-width: $MobileSmall)
                 font-size: 10px
   .experts__bloc-text
     flex: 1 0 50%
     max-width: 375px
-    @media (max-width: $MobileBig)
+    @media (max-width: $Tablet)
       margin: 40px 0 0 0
   .experts__video
     display: flex
@@ -345,8 +377,11 @@ $ColorBlue: #4285F4
     justify-content: center
     @media (max-width: $MobileBig)
       padding: 50px 0 50px 0
+      transform: scale(0.75)
+    @media (max-width: $MobileMedium)
+      transform: scale(0.65)
     @media (max-width: $MobileSmall)
-      transform: scale(0.8)
+      transform: scale(0.55)
     .experts__video iframe
       position: absolute
       width: 100%
@@ -362,7 +397,7 @@ $ColorBlue: #4285F4
   position: absolute
   background-color: $ColorRed
   border-radius: 16px
-  @media (max-width: $MobileSmall)
+  @media (max-width: $MobileBig)
     display: none
 .experts__info-bloc-decor1
   width: 65px
@@ -392,6 +427,8 @@ $ColorBlue: #4285F4
     padding: 80px 0 0 0
     @media (max-width: $Tablet)
       max-width: 500px
+    @media (max-width: $MobileBig)
+      padding: 40px 0 0 0
   .healthcare__content
     margin: 45px 0 0 0
     display: flex
@@ -417,8 +454,12 @@ $ColorBlue: #4285F4
           margin: 0 20px
         @media (max-width: $Tablet)
           margin: 20px 0
+        @media (max-width: $MobileBig)
+          margin: 10px 0
         .healthcare__item-icon
           margin: 36px 105px 58px 105px
+          @media (max-width: $MobileBig)
+            margin: 20px 0
         .healthcare__item-name
           font-family: Rubik,sans-serif
           font-size: 16px
@@ -432,7 +473,8 @@ $ColorBlue: #4285F4
           line-height: 16px
           color: #616161
           margin: 25px
-          max-width: 278px
+          @media (max-width: $MobileBig)
+            margin: 15px
 
 
 /*Footer--------------------------------------------------------------*/
@@ -450,12 +492,13 @@ $ColorBlue: #4285F4
         transform: scale(1.3)
 /*Bloc-text-----------------------------------------------------------*/
 .bloc-text
-  @media (max-width: $MobileBig)
+  @media (max-width: $Tablet)
     display: flex
     flex-direction: column
     align-items: center
     margin: 0 0 20px 0
-  @media (max-width: $MobileSmall)
+    text-align: center
+  @media (max-width: $MobileBig)
     margin: 0
   .bloc-text__title
     font-family: Rubik, sans-serif
@@ -465,10 +508,11 @@ $ColorBlue: #4285F4
     letter-spacing: 0.005em
     color: #000000
     @media (max-width: $MobileBig)
-      text-align: center
+      font-size: 35px
+      line-height: 45px
     @media (max-width: $MobileSmall)
-      font-size: 40px
-      margin: 0
+      font-size: 30px
+      line-height: 40px
   .bloc-text__title-center
     text-align: center
   .bloc-text__desc
@@ -478,7 +522,7 @@ $ColorBlue: #4285F4
     letter-spacing: 0.08em
     margin: 20px 0
     @media (max-width: $MobileBig)
-      text-align: center
+      max-width: $MobileSmall
   .bloc-text__desc-center
     text-align: center
     max-width: 600px
